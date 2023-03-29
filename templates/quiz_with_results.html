@@ -4,7 +4,13 @@
     <h1>Speedy Maths</h1>
     <h3>Answer the following questions:</h3>
 
-    <h2 id="myscore"></h2>
+    <h2 id="myscore">Time remaining: 180 seconds</h2>
+
+    <div class="popup" id="popup2">
+        <p>Congratulations, you scored 40/40!</p>
+        <p>Make sure to move up to the next level next time.</p>
+        <a href="#" onclick="hide('popup2')">Ok!</a>
+      </div>
 
 {% for i in range(0,2) %}
 <div class="column">
@@ -13,7 +19,7 @@
       <tr id="{{'row'+j|string}}">
       <th><label>{{ problems[j][0] }} </label></th>
       <th><p>=</p></th>
-      <th><input type="number" name="{{ problems[j][0] }}" placeholder="Enter answer" id="{{'input'+j|string}}"></th>
+      <th><input type=name="{{ problems[j][0] }}" placeholder="Enter answer" id="{{'input'+j|string}}"></th>
       <th><p class = "answer" id="{{'answer'+j|string}}">{{ problems[j][1] }}</p></th>
       </tr>
       {% endfor %}
@@ -22,8 +28,19 @@
 {% endfor %}
       <br>
       <button type="submit" id="subButton">Submit Answers</button>
-
       <script>
+
+        $ = function(id) {
+          return document.getElementById(id);
+        }
+
+        var show = function(id) {
+          $(id).style.display ='block';
+        }
+        var hide = function(id) {
+          $(id).style.display ='none';
+        }
+
         const button = document.getElementById("subButton");
         var divsToShow = document.getElementsByClassName("answer");
 
@@ -56,6 +73,14 @@
                 }
             }
             document.getElementById("myscore").textContent = totalCorrect + " / 40";
+            if (totalCorrect == 40) {
+              document.getElementById("popup2").style.display ='block'
+            }
+            var a = document.createElement('a')
+            a.setAttribute('href',"/")
+            a.innerHTML="Back to home"
+            button.innerHTML = ""
+            button.appendChild(a);
         });
         </script>
 
