@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+
+    {% endblock %}
+  </head>
+  <body>
+        <div id="content">{% block content %}{% endblock %}</div>
+        <footer>
+          <p> MHR 2023 </p>
+        <footer>
+
+  </body>
+</html>

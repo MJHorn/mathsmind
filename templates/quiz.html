@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Multiplication Quiz{% endblock %}
+{% block content %}
+    <h1>Speedy Maths</h1>
+    <p>Answer the following questions:</p>
+    <form action="/score" method="POST">
+
+{% for i in range(0,2) %}
+<div class="column">
+    <table>
+      {% for problem in problems[(i*20):(i*20+20)] %}
+      <tr>
+      <th><label>{{ problem }} </label></th>
+      <th><p>=</p></th>
+      <th><input type="number" name="{{ problem }}" placeholder="Enter answer"></th>
+    </tr>
+      {% endfor %}
+    </table>
+</div>
+{% endfor %}
+      <br>
+      <button type="submit">Submit Answers</button>
+    </form>
+{% endblock %}

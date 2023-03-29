@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Quiz Score{% endblock %}
+{% block content %}
+    <h1>Quiz Score</h1>
+    <p>Your score: {{ score }} / 50</p>
+    <h2>Answers</h2>
+
+
+    {% for i in range(0,2) %}
+    <div class="column">
+            <table>
+                    <tr>
+                        <th>Problem</th>
+                        <th>Your Answer</th>
+                        <th>Correct Answer</th>
+                    </tr>
+                            {% for row in user_answers[(i*20):40] %}
+          <tr>
+        <tr class="results">
+                <td>{{ row["problem"] }}</td>
+                <td>{{ row["user_answer"] }}</td>
+                <td>{{ row["correct_answer"] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        </div>
+        {% endfor %}
+    
+    {% endblock %}

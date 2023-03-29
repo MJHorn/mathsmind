@@ -1,0 +1,214 @@
+/* Set the font and background color for the entire page */
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f5f5f5;
+    margin: 50px;
+  }
+
+
+  button {
+      font-size: 3em;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+      }  
+  
+  /* Set the font size and margin for the header */
+  header {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  footer {
+    background-color: #f2f2f2;
+    text-align: center;
+    position: fixed;
+    left: 2px;
+    bottom: 2px;
+    width: 100%;
+  }
+
+  .answer {
+    display: none;
+  }
+  
+  .column {
+    float: left;
+    width: 50%;
+  }
+
+  th {
+      font-size: 2vw;
+  }
+
+  th input {
+      width: 80%;
+      height: 80%;
+      margin-bottom: 1em;
+      margin-top: 1em;
+  }
+
+  th p {
+      margin-left: 1em;
+      margin-right: 1em;
+  }
+
+  table {
+    margin: 0 auto;
+  }
+
+
+
+
+  input {
+      width: 100%;
+  }
+
+
+  /* Style the navigation links */
+  nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem;
+  }
+  
+  nav a:hover {
+    color: #fff;
+    background-color: #333;
+  }
+  
+  /* Style the form */
+  form {
+    margin-bottom: 0rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  form label {
+    display: block;
+    margin-bottom: 0rem;
+    font-size: 2em;
+  }
+  
+  input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  /* Style the quiz results */
+  .results {
+    margin-bottom: 2rem;
+  }
+  
+  .results h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .results p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .results .correct {
+    color: #4CAF50;
+  }
+  
+  .results .incorrect {
+    color: #F44336;
+  }
+
+
+
+.difficultyBody {
+    margin: 0;
+    height: 100%;
+    overflow: hidden}
+
+  h1 {
+    display: grid;
+    place-content: center;
+  }
+  
+  h2 {
+    display: grid;
+    place-content: center;
+  }
+
+  h3 {
+    display: grid;
+    place-content: center;
+  }
+  
+  form {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    padding-bottom: 40vh;
+  }
+  
+  .form-control {
+    font-family: system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+  }
+  
+  .form-control + .form-control {
+    margin-top: 1em;
+  }
+  
+  .form-control:focus-within {
+    color: var(--form-control-color);
+  }
+  
+  input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    /* Not removed via appearance */
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
+  
+  input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+  }
+  
+  input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+  
+  input[type="radio"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+  }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+
+    {% endblock %}
+  </head>
+  <body class="difficultyBody">
+      <div id="content">
+<h1>Speedy Maths</h1>
+<h2>Select Difficulty Level</h2>
+
+<form action="/quiz" method="POST">
+      <label class="form-control">
+        <input type="radio" name="difficulty" value="Level 1" required>
+        Level 1 - 2s, 5s, 10s
+      </label>
+      <label class="form-control"> 
+        <input type="radio" name="difficulty" value="Level 2">
+        Level 2 - 3s, 4s, 11s
+      </label>
+      <label class="form-control">
+        <input type="radio" name="difficulty" value="Level 3">
+        Level 3 - 6s, 9s
+      </label>
+      <label class="form-control">
+        <input type="radio" name="difficulty" value="Level 4">
+        Level 4 - 7s, 8s, 12s
+        </label>
+        <label class="form-control">
+        <input type="radio" name="difficulty" value="Level 5">
+        Level 5 - Decimals
+        </label>
+      <br>
+      <button type="submit">Start Speedy Maths</button>
+    </form>
+    <footer>
+            <p> MHR 2023 </p>
+          <footer>
+            </div>
+    </body>
+  </html>

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Multiplication Quiz{% endblock %}
+{% block content %}
+    <h1>Speedy Maths</h1>
+    <h3>Answer the following questions:</h3>
+
+    <h2 id="myscore"></h2>
+
+{% for i in range(0,2) %}
+<div class="column">
+    <table>
+      {% for j in range((i*20),(i*20+20)) %}
+      <tr id="{{'row'+j|string}}">
+      <th><label>{{ problems[j][0] }} </label></th>
+      <th><p>=</p></th>
+      <th><input type="number" name="{{ problems[j][0] }}" placeholder="Enter answer" id="{{'input'+j|string}}"></th>
+      <th><p class = "answer" id="{{'answer'+j|string}}">{{ problems[j][1] }}</p></th>
+      </tr>
+      {% endfor %}
+    </table>
+</div>
+{% endfor %}
+      <br>
+      <button type="submit" id="subButton">Submit Answers</button>
+
+      <script>
+        const button = document.getElementById("subButton");
+        var divsToShow = document.getElementsByClassName("answer");
+
+        var timeLimit = 180;
+        var timerInterval = setInterval(updateTimer, 1000);
+
+        function updateTimer() {
+            timeLimit--;
+            document.getElementById("myscore").textContent = "Time remaining: " + timeLimit + " seconds";
+            if (timeLimit == 0) {
+                clearInterval(timerInterval);
+                button.click();
+            }
+        }
+
+        button.addEventListener("click", function(event) {
+            clearInterval(timerInterval);
+            var totalCorrect = 0;
+            for (var i = 0; i < 40; i++) {
+                var answer = document.getElementById("answer" + i);
+                answer.style.display = "block";
+                var correct_answer = Math.round(parseFloat(answer.textContent)*10000);
+                var user_answer = Math.round(parseFloat(document.getElementById("input" + i).value)*10000);
+                document.getElementById("input" + i).disabled = true;
+                if (user_answer == correct_answer) {
+                    document.getElementById("row" + i).style.backgroundColor = "#4CAF50";
+                    totalCorrect++;
+                } else {
+                    document.getElementById("row" + i).style.backgroundColor = "#F44336";
+                }
+            }
+            document.getElementById("myscore").textContent = totalCorrect + " / 40";
+        });
+        </script>
+
+      
+{% endblock %}
