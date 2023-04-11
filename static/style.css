@@ -12,7 +12,8 @@ body {
   #subButton {
       font-size: 3vw;
       width: 50%;
-      margin: 5vw 20vw;
+      margin:0 auto;
+      display:block;
       }  
   
   /* Set the font size and margin for the header */
