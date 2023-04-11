@@ -12,10 +12,8 @@
         <a href="#" onclick="hide('popup2')">Ok!</a>
       </div>
 
-{% for i in range(0,2) %}
-<div class="column">
     <table>
-      {% for j in range((i*20),(i*20+20)) %}
+      {% for j in range(0,40) %}
       <tr id="{{'row'+j|string}}">
       <th><label>{{ problems[j][0] }} </label></th>
       <th><p>=</p></th>
@@ -24,10 +22,9 @@
       </tr>
       {% endfor %}
     </table>
-</div>
-{% endfor %}
       <br>
       <button type="submit" id="subButton">Submit Answers</button>
+      
       <script>
 
         $ = function(id) {
