@@ -1,8 +1,9 @@
 /* Set the font and background color for the entire page */
 body {
     font-family: "Roboto", sans-serif;
-    background-color: #f5f5f5;
+    background-color: #b5e3f7;
     margin: 50px;
+    text-align: left;
   }
 
   tr {
@@ -10,11 +11,18 @@ body {
   }
 
   #subButton {
-      font-size: 3vw;
-      width: 50%;
+      font-size: 2vw;
+      width: 100%;
       margin:0 auto;
       display:block;
+      margin-top: 1em;
+      background-color: #ff5722;
       }  
+
+    #subButton a { 
+        text-decoration: none;
+    }
+
   
   /* Set the font size and margin for the header */
   header {
@@ -144,12 +152,10 @@ body {
   
   h2 {
     display: grid;
-    place-content: center;
   }
 
   h3 {
     display: grid;
-    place-content: center;
   }
 
   form {
@@ -256,3 +262,30 @@ body {
     z-index: -1;
   }
   
+
+  div.sticky {
+    width: 20vw;
+    float: left;
+    position: -webkit-sticky;
+    position: sticky;
+    top:10vh;
+    left: 8vw;
+    text-align: left;
+    background-color: #ffd600;
+    padding: 2vw;
+  }
+
+  .sticky h1 {
+    font-size: 3vw;
+    margin-top: 0;
+  }
+
+  .sticky h3 {
+    font-size: 2vw;
+    text-align: left;
+    place-content: left;
+  }
+
+  .diff {
+    place-content: center;
+  }
