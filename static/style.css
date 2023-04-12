@@ -30,13 +30,13 @@ body {
     margin-bottom: 2rem;
   }
 
-  footer {
-    background-color: #f2f2f2;
-    text-align: center;
-    left: 2px;
-    bottom: 2px;
-    width: 100%;
-  }
+#footer {
+    position: fixed;
+    top: 95vh;
+    left: 50vw;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
 
   .answer {
     display: none;
@@ -83,6 +83,33 @@ body {
     color: #333;
     text-decoration: none;
     padding: 0.5rem;
+  }
+
+  button {
+    font-size: 2vw;
+    width: 100%;
+    margin:0 auto;
+    display:block;
+    margin-top: 1em;
+    background-color: #ff5722;
+  }
+
+  .diffbox {
+        position: fixed;
+        padding: 5vh;
+        top: 50vh;
+        left: 50vw;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+    background-color: #ffd600;
+  }
+
+  .diffbox h1 {
+      font-size: 3vw;
+  }
+
+  .diffbox h2 {
+      font-size: 2vw;
   }
   
   nav a:hover {
@@ -159,20 +186,20 @@ body {
   }
 
   form {
+    padding-top: 2vh;
     display: grid;
     place-content: center;
-    min-height: 90vh;
-    padding-bottom: 40vh;
   }
   
   .form-control {
     font-family: system-ui, sans-serif;
-    font-size: 2rem;
+    font-size: 1.3vw;
     font-weight: bold;
     line-height: 1.1;
     display: grid;
     grid-template-columns: 1em auto;
     gap: 0.5em;
+    height: 4vh;
   }
   
   .form-control + .form-control {
